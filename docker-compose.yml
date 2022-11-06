@@ -1,0 +1,8 @@
+version: '3.7'
+services:
+  client:
+    container_name: 'kib-app-client'
+    build:
+      context: .
+    ports:
+      - 8080:80
