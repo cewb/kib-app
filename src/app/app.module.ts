@@ -18,7 +18,10 @@ import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTableModule } from '@angular/material/table';
+import { MatDialogModule } from '@angular/material/dialog';
+
 import { UserListComponent } from './components/user-list/user-list.component';
+import { CpDialogComponent } from './components/cp-dialog/cp-dialog.component';
 
 
 const appRoutes: Routes = [
@@ -31,7 +34,8 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     ControlPanelComponent,
-    UserListComponent
+    UserListComponent,
+    CpDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -42,6 +46,7 @@ const appRoutes: Routes = [
       { enableTracing: false } // <-- debugging purposes only
     ),
     BrowserAnimationsModule,
+    MatDialogModule,
     MatGridListModule,
     MatCheckboxModule,
     MatToolbarModule,
