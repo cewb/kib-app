@@ -10,6 +10,7 @@ import { catchError, retry } from 'rxjs/operators';
 export class HttpService {
 
   phUsersUrl = "https://jsonplaceholder.typicode.com/users";
+  dbUsersUrl = "http://localhost:8081/users";
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -22,5 +23,9 @@ export class HttpService {
 
   getPhUsers(): Observable<JSON[]>  {
     return this.http.get<JSON[]>(this.phUsersUrl, this.httpOptions);
+  }
+
+  getDbUsers(): Observable<JSON[]> {
+    return this.http.get<JSON[]>(this.dbUsersUrl, this.httpOptions);
   }
 }
