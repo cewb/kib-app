@@ -1,0 +1,14 @@
+mat-card {
+    display: block;
+    width: max-content;
+}
+
+#del-btn.mat-success {
+    background-color: rgb(220, 53, 53);
+    color: #fff;
+}
+
+#push-btn.mat-success {
+    background-color: rgb(205, 236, 255);
+    color: black;
+}

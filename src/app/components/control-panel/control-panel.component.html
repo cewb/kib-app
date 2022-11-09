@@ -1,10 +1,28 @@
 
-<mat-grid-list cols="4" rowHeight="1:1">
+<mat-grid-list cols="4" rowHeight="2:1">
     <mat-grid-tile
         *ngFor="let tile of tiles"
         [colspan]="tile.cols"
         [rowspan]="tile.rows"
         [style.background]="tile.color">
-      {{tile.text}}
+      
+        <mat-card *ngIf="tile.id=='2'">
+          <mat-card-title>Push Placeholder Users</mat-card-title>
+          <mat-card-subtitle>Persist placeholder users into local database.</mat-card-subtitle>
+          <mat-card-actions>
+            <button mat-button id="push-btn" color="success" (click)="clickedPushBtn()">Push</button>
+          </mat-card-actions>
+        </mat-card>
+
+        <br/>
+
+        <mat-card *ngIf="tile.id=='3'">
+          <mat-card-title>Delete All Db Users</mat-card-title>
+          <mat-card-subtitle>Delete all database users in local database.</mat-card-subtitle>
+          <mat-card-actions>
+            <button mat-button id="del-btn" color="success" (click)="clickedClearAllBtn()">Clear All</button>
+          </mat-card-actions>
+        </mat-card>
+        
     </mat-grid-tile>
   </mat-grid-list>

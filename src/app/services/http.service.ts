@@ -11,6 +11,8 @@ export class HttpService {
 
   phUsersUrl = "https://jsonplaceholder.typicode.com/users";
   dbUsersUrl = "http://localhost:8081/users";
+  pushPhUsersUrl = "http://localhost:8081/push";
+  delAllUsersUrl = "http://localhost:8081/users_delete_all";
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -21,11 +23,20 @@ export class HttpService {
 
   constructor(private http: HttpClient) { }
 
-  getPhUsers(): Observable<JSON[]>  {
+  getPhUsers(): Observable<JSON[]> {
     return this.http.get<JSON[]>(this.phUsersUrl, this.httpOptions);
   }
 
   getDbUsers(): Observable<JSON[]> {
     return this.http.get<JSON[]>(this.dbUsersUrl, this.httpOptions);
   }
+
+  postPhUsers(body: string): Observable<any> {
+    return this.http.post<any>(this.pushPhUsersUrl, body, this.httpOptions);
+  }
+
+  deleteAllDbUsers() {
+    return this.http.delete<any>(this.delAllUsersUrl, this.httpOptions);
+  }
+
 }
