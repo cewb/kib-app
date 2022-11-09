@@ -36,7 +36,7 @@ export class HttpService {
   }
 
   deleteAllDbUsers() {
-    return this.http.delete<any>(this.delAllUsersUrl, this.httpOptions);
+    return this.http.get(this.delAllUsersUrl, this.httpOptions);
   }
 
 }

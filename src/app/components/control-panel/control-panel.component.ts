@@ -31,7 +31,7 @@ export class ControlPanelComponent implements OnInit {
     this.http.getPhUsers().subscribe(data=>{
       // console.log(JSON.stringify(data));
       this.http.postPhUsers(JSON.stringify(data)).subscribe(data=>{
-        console.log(data)
+        console.log("pushed")
       })
     })
     
@@ -39,7 +39,9 @@ export class ControlPanelComponent implements OnInit {
 
   clickedClearAllBtn() {
     // console.log("clicked clear all")
-    this.http.deleteAllDbUsers()
+    this.http.deleteAllDbUsers().subscribe(d=>{
+      console.log("cleared")
+    })
   }
 
 }
